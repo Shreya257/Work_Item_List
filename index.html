@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>TODO List</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+</head>
+<body>
+    <button class="home">LIST  <i class="fa fa-book"></i></button>
+    <div id="current_date"></div>
+    <div id = "clock" onload="currentTime()"></div>
+    <h1><span class="title">Work To Do Or Item List  </span>   <i class='fa fa-list'></i></h1>
+    <div class="inputDiv">
+    	   <input type="text" class="input" placeholder="Enter the work to do or list of items..">
+    	   <button class="add">SAVE <i class="fas fa-plus"></i></button>
+           <button onclick="removeAll()" class="button">CLEAR LIST <i class='fa fa-trash'></i></button>
+    </div>
+    <div class="container">
+    </div>
+    <script src='main.js'></script>
+</body>
+</html>
