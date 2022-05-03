@@ -1,16 +1,11 @@
 const container = document.querySelector('.container'); 
 var inputValue = document.querySelector('.input');
 const add = document.querySelector('.add');
-
-// for displaying current date
-
 date = new Date();
 year = date.getFullYear();
 month = date.getMonth() + 1;
 day = date.getDate();
 document.getElementById("current_date").innerHTML = "DATE (" +month + "-" + day + "-" + year + ")";
-
-// for getting items stored
 
 if(window.localStorage.getItem("todos") == undefined){
      var todos = [];
@@ -19,8 +14,6 @@ if(window.localStorage.getItem("todos") == undefined){
 
 var todosEX = window.localStorage.getItem("todos");
 var todos = JSON.parse(todosEX);
-
-// Item class defining input, edit, remove functions
 
 class item{
 	constructor(name){
@@ -69,8 +62,6 @@ class item{
         }
     }
 
-    // Using remove function for removing particular entry 
-
     remove(itemBox, name){
         itemBox.parentNode.removeChild(itemBox);
         let index = todos.indexOf(name);
@@ -78,32 +69,11 @@ class item{
         window.localStorage.setItem("todos", JSON.stringify(todos));
     }
 }
-
-// function called whenever specifified event is delivered to the target
-
-add.addEventListener('click', check);
-window.addEventListener('keydown', (e) => {
-	if(e.which == 25){
-		check();
-	}
-})
- 
-function check(){
-	if(inputValue.value != ""){
-		new item(inputValue.value);
-        todos.push(inputValue.value);
-        window.localStorage.setItem("todos", JSON.stringify(todos));
-		inputValue.value = "";
-	}
-}
-
 // function to clear the whole list
 
 function removeAll(){
     container.innerHTML="";
 }
-
-// function to display the updating current time
 
 function currentTime() {
     let date = new Date(); 
